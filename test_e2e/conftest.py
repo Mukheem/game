@@ -13,11 +13,11 @@ def pytest_addoption(parser):
 def setUp(request):
     browser_name = request.config.getoption("--browser_name")
     if browser_name == "chrome":
-        driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
+        driver = webdriver.Chrome(executable_path="I:\\Softwares\\Selenium\\chromedriver.exe")
         driver.get("http://ninedt.herokuapp.com/#/game")
-    elif browser_name == "firefox":
-        driver = webdriver.Firefox(executable_path="C:\\gecko.exe")
-        driver.get("http://ninedt.herokuapp.com/#/game")
+    # elif browser_name == "firefox":
+    #     driver = webdriver.Firefox(executable_path="C:\\gecko.exe")
+    #     driver.get("http://ninedt.herokuapp.com/#/game")
     driver.maximize_window()
     request.cls.driver = driver
     yield
